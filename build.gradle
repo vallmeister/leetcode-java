@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+dependencies {
+
+    // Testing dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for running tests
+    useJUnitPlatform()
+}
