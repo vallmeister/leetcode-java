@@ -3,12 +3,16 @@
 
 # Ignore Gradle build output directory
 build
+/out/
 
 # Compiled class file
 *.class
 
-# Log file
+# Ignore log and temp files
 *.log
+*.temp
+*.swp
+*.swo
 
 # BlueJ files
 *.ctxt
@@ -28,3 +32,18 @@ build
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Ignore IDEA project files
+.idea/
+*.iml
+*.iws
+
+# Ignore IntelliJ-generated files
+/.idea/workspace.xml
+/.idea/libraries/
+.idea/shelf/
+
+# Ignore dependency caches
+**/build/
+**/out/
+**/.gradle/
