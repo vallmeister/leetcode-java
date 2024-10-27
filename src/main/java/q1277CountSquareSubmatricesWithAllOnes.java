@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.List;
+
 public class q1277CountSquareSubmatricesWithAllOnes {
     public int countSquares(int[][] matrix) {
         final int m = matrix.length;
@@ -7,12 +10,11 @@ public class q1277CountSquareSubmatricesWithAllOnes {
             for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == 0) {
                     continue;
-                } else if (i == 0 || j == 0) {
-                    ans += 1;
-                } else {
-                    matrix[i][j] = Math.min(matrix[i - 1][j - 1], Math.min(matrix[i - 1][j], matrix[i][j - 1])) + 1;
-                    ans += matrix[i][j];
+                } else if (i > 0 && j > 0) {
+                    matrix[i][j] = Collections.min(
+                            List.of(matrix[i - 1][j - 1], matrix[i - 1][j], matrix[i][j - 1])) + 1;
                 }
+                ans += matrix[i][j];
             }
         }
         return ans;
